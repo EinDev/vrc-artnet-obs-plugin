@@ -1,6 +1,7 @@
 #include <obs-module.h>
 
-struct vrc_source {
+struct vrc_source
+{
 	struct vec4 color_white;
 	struct vec4 color_black;
 
@@ -10,12 +11,14 @@ struct vrc_source {
 	obs_source_t *src;
 };
 
-static const char *my_source_name(void *unused) {
+static const char *my_source_name(void *unused)
+{
     UNUSED_PARAMETER(unused);
     return obs_module_text("SourceName");
 }
 
-static void *my_source_create(obs_data_t *settings, obs_source_t *source) {
+static void *my_source_create(obs_data_t *settings, obs_source_t *source)
+{
     struct vrc_source *context = bzalloc(sizeof(struct vrc_source));
 }
 
@@ -111,7 +114,8 @@ static obs_properties_t *my_source_properties(void *unused)
 	return props;
 }
 
-struct obs_source_info my_source {
+struct obs_source_info my_source
+{
         .id           = "vrc_artnet_plugin",
         .type         = OBS_SOURCE_TYPE_INPUT,
         .output_flags = OBS_SOURCE_VIDEO,
