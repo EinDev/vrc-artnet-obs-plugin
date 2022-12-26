@@ -1,7 +1,6 @@
 #include <obs-module.h>
 
-struct vrc_source
-{
+struct vrc_source {
 	struct vec4 color_white;
 	struct vec4 color_black;
 
